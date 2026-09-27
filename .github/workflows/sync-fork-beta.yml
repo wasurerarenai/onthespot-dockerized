@@ -16,18 +16,18 @@ jobs:
       - name: Checkout fork
         uses: actions/checkout@v4
         with:
-          ref: search-filter-fix
+          ref: fastapi-rolling
           fetch-depth: 0
 
       - name: Add upstream
         run: |
           git remote add upstream https://github.com/ots-downloader/onthespot.git
-          git fetch upstream search-filter-fix
+          git fetch upstream fastapi-rolling
 
       - name: Sync with upstream
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git checkout search-filter-fix
-          git merge upstream/search-filter-fix --ff-only
-          git push origin search-filter-fix
+          git checkout fastapi-rolling
+          git merge upstream/fastapi-rolling --ff-only
+          git push origin fastapi-rolling
